@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	188aa43ec231b5354fd37cf37a48c8ed
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
+Patch0:		%{name}-pipe.patch
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
 BuildRequires:	autoconf
 BuildRequires:	gtk+-devel
@@ -24,6 +25,7 @@ graficznych NVidia.
 
 %prep
 %setup -q -n %{name}
+%patch0
 
 %build
 mv -f aclocal.m4 acinclude.m4
