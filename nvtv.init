@@ -20,12 +20,11 @@ case "$1" in
 		msg_starting NvTV
 		busy
 		setsid nvtvd ${OPTIONS} </dev/null 2>/dev/null >/dev/null &
-		if [ "$?" = "0" ] ; then
-			deltext
+		RETVAL=$?
+		if [ $RETVAL = 0 ] ; then
 			ok
 			touch /var/lock/subsys/nvtv
 		else
-			deltext
 			fail
 		fi
 	else
@@ -33,17 +32,17 @@ case "$1" in
 	fi
 	;;
   stop)
-	# Stop daemons.
-        if [ -f /var/lock/subsys/nvtv ]; then
-                msg_stopping NvTV
+	if [ -f /var/lock/subsys/nvtv ]; then
+		# Stop daemons.
+		msg_stopping NvTV
 		killproc nvtvd
 		rm -f /var/lock/subsys/nvtv
-        else
-                msg_not_running NvTV
-                exit 1
+	else
+		msg_not_running NvTV
+		exit 1
 	fi
 	;;
-  restart)
+  restart|reload)
 	$0 stop
 	$0 start
 	;;
@@ -52,7 +51,7 @@ case "$1" in
 	exit $?
 	;;
   *)
-	msg_usage "$0 {start|stop|status|restart}"
+	msg_usage "$0 {start|stop|restartreload|status}"
 	exit 1
 esac
 
