@@ -12,6 +12,7 @@
 
 [ -f /etc/sysconfig/nvtv ] && . /etc/sysconfig/nvtv
 
+
 # See how we were called.
 case "$1" in
   start)
@@ -51,7 +52,7 @@ case "$1" in
 	exit $?
 	;;
   *)
-	msg_usage "$0 {start|stop|restartreload|status}"
+	msg_usage "$0 {start|stop|restart|reload|status}"
 	exit 1
 esac
 
