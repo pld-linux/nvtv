@@ -1,7 +1,7 @@
 Summary:	NVidia tv-out tool
 Name:		nvtv
 Version:	0.4.3
-Release:	0.9
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -28,9 +28,10 @@ mv -f aclocal.m4 acinclude.m4
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc/{rc.d/init.d,sysconfig},%{_sbindir},%{_mandir}/man{1,8}}
+install -d $RPM_BUILD_ROOT{/etc/{rc.d/init.d,sysconfig},%{_sbindir},%{_bindir},%{_mandir}/man{1,8}}
 
-install src/nvtv* $RPM_BUILD_ROOT%{_sbindir}
+install src/nvtvd $RPM_BUILD_ROOT%{_sbindir}
+install src/nvtv $RPM_BUILD_ROOT%{_bindir}
 install doc/man/nvtv.1x $RPM_BUILD_ROOT%{_mandir}/man1/nvtv.1
 install doc/man/nvtvd.8 $RPM_BUILD_ROOT%{_mandir}/man8/nvtvd.8
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/nvtv
@@ -61,4 +62,5 @@ fi
 %attr(754,root,root) /etc/rc.d/init.d/nvtv
 %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/nvtv
 %attr(755,root,root) %{_sbindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
