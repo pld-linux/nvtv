@@ -58,5 +58,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc ANNOUNCE BUGS ChangeLog FAQ README TODO doc/USAGE doc/*.txt
+%attr(754,root,root) /etc/rc.d/init.d/nvtv
+%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/nvtv
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man*/*
