@@ -1,37 +1,43 @@
-Summary:	NVidia TV-out tool
-Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia
+Summary:	NVidia (and others) TV-out tool
+Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
-Version:	0.4.6
+Version:	0.4.7
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
-# Source0-md5:	1ca0b59ab730e95e7dee0606efe73446
+# Source0-md5:	35348d7608f94b7d114cd6ef46b66fc7
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
-Patch0:		%{name}-pipe.patch
+Patch0:		%{name}-opt.patch
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	pciutils-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tool to use the TV-Out capabilities of NVidia graphic cards on Linux.
+Now it supports not only NVidia chips.
 
 %description -l pl
 Narzêdzie pozwalaj±ce wykorzystaæ pod Linuksem mo¿liwo¶ci TV-Out kart
-graficznych NVidia.
+graficznych NVidia, od niedawna tak¿e innych.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 mv -f aclocal.m4 acinclude.m4
 %{__aclocal}
 %{__autoconf}
-%configure
+%configure \
+	%{!?debug:--disable-debug} \
+	--with-gtk=gtk2
+
 %{__make}
 
 %install
