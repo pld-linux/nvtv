@@ -16,7 +16,7 @@ Patch0:		%{name}-opt.patch
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
