@@ -1,12 +1,12 @@
 Summary:	NVidia TV-out tool
 Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia
 Name:		nvtv
-Version:	0.4.3
+Version:	0.4.6
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
-# Source0-md5:	188aa43ec231b5354fd37cf37a48c8ed
+# Source0-md5:	1ca0b59ab730e95e7dee0606efe73446
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-pipe.patch
@@ -25,8 +25,7 @@ Narzêdzie pozwalaj±ce wykorzystaæ pod Linuksem mo¿liwo¶ci TV-Out kart
 graficznych NVidia.
 
 %prep
-%setup -q -n %{name}
-%patch0
+%setup -q
 
 %build
 mv -f aclocal.m4 acinclude.m4
@@ -41,8 +40,8 @@ install -d $RPM_BUILD_ROOT{/etc/{rc.d/init.d,sysconfig},%{_sbindir},%{_bindir},%
 
 install src/nvtvd $RPM_BUILD_ROOT%{_sbindir}
 install src/nvtv $RPM_BUILD_ROOT%{_bindir}
-install doc/man/nvtv.1x $RPM_BUILD_ROOT%{_mandir}/man1/nvtv.1
-install doc/man/nvtvd.8 $RPM_BUILD_ROOT%{_mandir}/man8/nvtvd.8
+install man/nvtv.1x $RPM_BUILD_ROOT%{_mandir}/man1/nvtv.1
+install man/nvtvd.8 $RPM_BUILD_ROOT%{_mandir}/man8/nvtvd.8
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/nvtv
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/nvtv
 
