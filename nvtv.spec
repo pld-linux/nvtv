@@ -1,4 +1,5 @@
-Summary:	NVidia tv-out tool
+Summary:	NVidia TV-out tool
+Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia
 Name:		nvtv
 Version:	0.4.3
 Release:	1
@@ -15,6 +16,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tool to use the TV-Out capabilities of NVidia graphic cards on Linux.
+
+%description -l pl
+Narzêdzie pozwalaj±ce wykorzystaæ pod Linuksem mo¿liwo¶ci TV-Out kart
+graficznych NVidia.
 
 %prep
 %setup -q -n %{name}
