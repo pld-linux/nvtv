@@ -75,6 +75,7 @@ Statyczna biblioteka libnvtvsimple.
 echo '#define DPRINTF(s...)' >> lib/resize.h
 
 %build
+cp -f /usr/share/automake/config.* .
 mv -f aclocal.m4 acinclude.m4
 %{__aclocal}
 %{__autoconf}
