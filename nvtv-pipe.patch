@@ -1,0 +1,13 @@
+--- src/xxx/pipe.h~	2002-12-16 15:39:23.000000000 +0000
++++ src/xxx/pipe.h	2003-09-28 19:17:46.000000000 +0000
+@@ -34,8 +34,8 @@
+ #define CONFIG_PIPE_PATH "/var/run"
+ #endif
+ 
+-#define PIPE_IN  CONFIG_PIPE_PATH ## "/nvtv-in"
+-#define PIPE_OUT CONFIG_PIPE_PATH ## "/nvtv-out"
++#define PIPE_IN  CONFIG_PIPE_PATH "/nvtv-in"
++#define PIPE_OUT CONFIG_PIPE_PATH "/nvtv-out"
+ 
+ #define PIPE_VERSION	0x000403 /* 0.4.3 */
+ 
