@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	188aa43ec231b5354fd37cf37a48c8ed
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
