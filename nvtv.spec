@@ -21,6 +21,8 @@ BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xrender-devel
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
 # uses <sys/io.h> interface to setup some adapters
 ExclusiveArch:	alpha arm %{ix86} ia64 sh amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
