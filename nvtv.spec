@@ -2,13 +2,14 @@ Summary:	NVidia (and others) TV-out tool
 Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
+%define	libver	0.4.7a
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 # Source0-md5:	35348d7608f94b7d114cd6ef46b66fc7
-Source1:	http://dl.sourceforge.net/nv-tv-out/libnvtvsimple-%{version}.tar.gz
-# Source1-md5:	00690c16dee7a03603008ef7c30756fa
+Source1:	http://dl.sourceforge.net/nv-tv-out/libnvtvsimple-%{libver}.tar.gz
+# Source1-md5:	8c97d39818dc1e50704d8bb9ba5e7f06
 Source2:	%{name}.init
 Source3:	%{name}.sysconfig
 Patch0:		%{name}-opt.patch
@@ -71,9 +72,6 @@ Statyczna biblioteka libnvtvsimple.
 %setup -q -b1
 %patch0 -p1
 
-# hack to kill undefined symbol
-echo '#define DPRINTF(s...)' >> lib/resize.h
-
 %build
 cp -f /usr/share/automake/config.* .
 mv -f aclocal.m4 acinclude.m4
@@ -86,7 +84,6 @@ mv -f aclocal.m4 acinclude.m4
 %{__make}
 
 cd lib
-install -d config
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
