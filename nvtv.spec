@@ -5,13 +5,14 @@ Version:	0.4.3
 Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 # Source0-md5:	188aa43ec231b5354fd37cf37a48c8ed
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-pipe.patch
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gtk+-devel
 BuildRequires:	pciutils-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
