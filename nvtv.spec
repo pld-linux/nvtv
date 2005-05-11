@@ -24,7 +24,7 @@ BuildRequires:	xrender-devel
 PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 # uses <sys/io.h> interface to setup some adapters
-ExclusiveArch:	alpha arm %{ix86} ia64 sh amd64
+ExclusiveArch:	alpha arm %{ix86} ia64 sh %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
