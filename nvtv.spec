@@ -21,7 +21,7 @@ BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xrender-devel
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 # uses <sys/io.h> interface to setup some adapters
 ExclusiveArch:	alpha arm %{ix86} ia64 sh %{x8664}
@@ -136,7 +136,7 @@ fi
 %defattr(644,root,root,755)
 %doc ANNOUNCE BUGS ChangeLog FAQ README TODO doc/USAGE doc/*.txt
 %attr(754,root,root) /etc/rc.d/init.d/nvtv
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/nvtv
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/nvtv
 %attr(755,root,root) %{_bindir}/nvtv
 %attr(755,root,root) %{_sbindir}/nvtvd
 %{_mandir}/man1/nvtv.1*
