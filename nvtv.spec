@@ -3,7 +3,7 @@ Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
 %define	libver	0.4.7a
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
