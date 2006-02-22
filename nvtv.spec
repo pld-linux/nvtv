@@ -20,7 +20,6 @@ BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
-BuildRequires:	xrender-devel
 Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 # uses <sys/io.h> interface to setup some adapters
