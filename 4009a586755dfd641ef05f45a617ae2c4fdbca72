@@ -1,0 +1,3 @@
+- moved nvtv from sbindir to bindir, users can use it
+- relup from 0.9 to 1.0
+- quite useful for nvidia-manufactured card owners
