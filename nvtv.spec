@@ -20,6 +20,7 @@ BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 # uses <sys/io.h> interface to setup some adapters
@@ -114,17 +115,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/chkconfig --add nvtv
-if [ -f /var/lock/subsys/nvtv ]; then
-	/etc/rc.d/init.d/nvtv restart >&2
-else
-	echo "Run \"/etc/rc.d/init.d/nvtv start\" to start NvTV daemon." >&2
-fi
+%service nvtv restart
 
 %preun
 if [ "$1" = "0" ]; then
-	if [ -f /var/lock/subsys/nvtv ]; then
-		/etc/rc.d/init.d/nvtv stop >&2
-	fi
+	%service nvtv stop
 	/sbin/chkconfig --del nvtv
 fi
 
