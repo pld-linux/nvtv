@@ -1,8 +1,8 @@
+%define	libver	0.4.7a
 Summary:	NVidia (and others) TV-out tool
 Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
-%define	libver	0.4.7a
 Release:	3
 License:	GPL v2+
 Group:		Applications/System
@@ -21,8 +21,8 @@ BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 # uses <sys/io.h> interface to setup some adapters
 ExclusiveArch:	alpha arm %{ix86} ia64 sh %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -115,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/chkconfig --add nvtv
-%service nvtv restart
+%service nvtv restart "NvTV daemon"
 
 %preun
 if [ "$1" = "0" ]; then
