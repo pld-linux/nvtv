@@ -3,7 +3,7 @@ Summary:	NVidia (and others) TV-out tool
 Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
@@ -13,6 +13,7 @@ Source1:	http://dl.sourceforge.net/nv-tv-out/libnvtvsimple-%{libver}.tar.gz
 Source2:	%{name}.init
 Source3:	%{name}.sysconfig
 Patch0:		%{name}-opt.patch
+Patch1:		%{name}-pci-link.patch
 URL:		http://www.sourceforge.net/projects/nv-tv-out/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
@@ -75,6 +76,7 @@ Statyczna biblioteka libnvtvsimple.
 %prep
 %setup -q -b1
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .

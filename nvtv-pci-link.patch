@@ -1,0 +1,11 @@
+--- nvtv-0.4.7/configure.in~	2007-01-23 23:37:30.000000000 +0100
++++ nvtv-0.4.7/configure.in	2007-01-23 23:48:41.000000000 +0100
+@@ -262,7 +262,7 @@
+ fi
+ 
+ if test ${host_flag} = unix -o ${with_winio} = yes ; then
+-  AC_CHECK_LIB(pci,pci_init,LIBS="$LIBS -lpci" pciutils_libname="pci",
++  AC_CHECK_LIB(pci,pci_init,LIBS="$LIBS -lpci -lz" pciutils_libname="pci",
+     AC_CHECK_LIB(pciutils,pci_init,LIBS="$LIBS -lpciutils" pciutils_libname="pciutils",
+       AC_MSG_ERROR(pci library required)))
+ fi
