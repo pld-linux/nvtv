@@ -1,6 +1,6 @@
 %define	libver	0.4.7a
 Summary:	NVidia (and others) TV-out tool
-Summary(pl):	Narzêdzie do TV-out w kartach firmy NVidia (i innych)
+Summary(pl.UTF-8):   NarzÄ™dzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
 Release:	4
@@ -32,45 +32,45 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Tool to use the TV-Out capabilities of NVidia graphic cards on Linux.
 Now it supports not only NVidia chips.
 
-%description -l pl
-Narzêdzie pozwalaj±ce wykorzystaæ pod Linuksem mo¿liwo¶ci TV-Out kart
-graficznych NVidia, od niedawna tak¿e innych.
+%description -l pl.UTF-8
+NarzÄ™dzie pozwalajÄ…ce wykorzystaÄ‡ pod Linuksem moÅ¼liwoÅ›ci TV-Out kart
+graficznych NVidia, od niedawna takÅ¼e innych.
 
 %package -n libnvtvsimple
 Summary:	Simple API library for nvtv
-Summary(pl):	Prosta biblioteka do nvtv
+Summary(pl.UTF-8):   Prosta biblioteka do nvtv
 Group:		Libraries
 
 %description -n libnvtvsimple
 This is the simple API library for nvtv, which uses the client backend
 to access nvtvd.
 
-%description -n libnvtvsimple -l pl
-Ten pakiet zawiera prost± bibliotekê do nvtv, u¿ywaj±c± backendu
-klienckiego do dostêpu do nvtvd.
+%description -n libnvtvsimple -l pl.UTF-8
+Ten pakiet zawiera prostÄ… bibliotekÄ™ do nvtv, uÅ¼ywajÄ…cÄ… backendu
+klienckiego do dostÄ™pu do nvtvd.
 
 %package -n libnvtvsimple-devel
 Summary:	Header file for libnvtvsimple library
-Summary(pl):	Plik nag³ówkowy biblioteki libnvtvsimple
+Summary(pl.UTF-8):   Plik nagÅ‚Ã³wkowy biblioteki libnvtvsimple
 Group:		Development/Libraries
 Requires:	libnvtvsimple = %{version}-%{release}
 
 %description -n libnvtvsimple-devel
 Header file for libnvtvsimple library.
 
-%description -n libnvtvsimple-devel -l pl
-Plik nag³ówkowy biblioteki libnvtvsimple.
+%description -n libnvtvsimple-devel -l pl.UTF-8
+Plik nagÅ‚Ã³wkowy biblioteki libnvtvsimple.
 
 %package -n libnvtvsimple-static
 Summary:	Static libnvtvsimple library
-Summary(pl):	Statyczna biblioteka libnvtvsimple
+Summary(pl.UTF-8):   Statyczna biblioteka libnvtvsimple
 Group:		Development/Libraries
 Requires:	libnvtvsimple-devel = %{version}-%{release}
 
 %description -n libnvtvsimple-static
 Static libnvtvsimple library.
 
-%description -n libnvtvsimple-static -l pl
+%description -n libnvtvsimple-static -l pl.UTF-8
 Statyczna biblioteka libnvtvsimple.
 
 %prep
