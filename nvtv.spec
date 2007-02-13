@@ -1,6 +1,6 @@
 %define	libver	0.4.7a
 Summary:	NVidia (and others) TV-out tool
-Summary(pl.UTF-8):   Narzędzie do TV-out w kartach firmy NVidia (i innych)
+Summary(pl.UTF-8):	Narzędzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
 Release:	4
@@ -38,7 +38,7 @@ graficznych NVidia, od niedawna także innych.
 
 %package -n libnvtvsimple
 Summary:	Simple API library for nvtv
-Summary(pl.UTF-8):   Prosta biblioteka do nvtv
+Summary(pl.UTF-8):	Prosta biblioteka do nvtv
 Group:		Libraries
 
 %description -n libnvtvsimple
@@ -51,7 +51,7 @@ klienckiego do dostępu do nvtvd.
 
 %package -n libnvtvsimple-devel
 Summary:	Header file for libnvtvsimple library
-Summary(pl.UTF-8):   Plik nagłówkowy biblioteki libnvtvsimple
+Summary(pl.UTF-8):	Plik nagłówkowy biblioteki libnvtvsimple
 Group:		Development/Libraries
 Requires:	libnvtvsimple = %{version}-%{release}
 
@@ -63,7 +63,7 @@ Plik nagłówkowy biblioteki libnvtvsimple.
 
 %package -n libnvtvsimple-static
 Summary:	Static libnvtvsimple library
-Summary(pl.UTF-8):   Statyczna biblioteka libnvtvsimple
+Summary(pl.UTF-8):	Statyczna biblioteka libnvtvsimple
 Group:		Development/Libraries
 Requires:	libnvtvsimple-devel = %{version}-%{release}
 
