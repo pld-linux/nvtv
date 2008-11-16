@@ -3,7 +3,7 @@ Summary:	NVidia (and others) TV-out tool
 Summary(pl.UTF-8):	Narzędzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
