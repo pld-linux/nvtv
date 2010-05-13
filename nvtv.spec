@@ -22,6 +22,9 @@ BuildRequires:	libtool
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	xorg-lib-libXmu-devel
+BuildRequires:	xorg-lib-libXxf86vm-devel
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
 # uses <sys/io.h> interface to setup some adapters
