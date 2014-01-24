@@ -3,12 +3,12 @@ Summary:	NVidia (and others) TV-out tool
 Summary(pl.UTF-8):	Narzędzie do TV-out w kartach firmy NVidia (i innych)
 Name:		nvtv
 Version:	0.4.7
-Release:	8
+Release:	9
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 # Source0-md5:	35348d7608f94b7d114cd6ef46b66fc7
-Source1:	http://dl.sourceforge.net/nv-tv-out/libnvtvsimple-%{libver}.tar.gz
+Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-%{libver}.tar.gz
 # Source1-md5:	8c97d39818dc1e50704d8bb9ba5e7f06
 Source2:	%{name}.init
 Source3:	%{name}.sysconfig
@@ -147,6 +147,7 @@ fi
 %defattr(644,root,root,755)
 %doc lib/README
 %attr(755,root,root) %{_libdir}/libnvtvsimple.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libnvtvsimple.so.0
 
 %files -n libnvtvsimple-devel
 %defattr(644,root,root,755)
